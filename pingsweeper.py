@@ -5,15 +5,18 @@ results = []
 def ping(hostname, device_label):
     response = os.system('ping -c 1 ' + hostname)
     if response == 0:
-        results.append(hostname +" "+device_label ," is UP")
+        results.append(hostname +"\t"+device_label +"\tis UP")
     else:
-        results.append(hostname +" " +device_label + " is DOWN")
+        results.append(hostname +"\t" +device_label + "\tis DOWN")
 
 
-ping('10.4.22.154', 'TDAS Server biak')
-ping('10.4.22.1', 'router jarkombra biak')
-ping('10.150.208.1', 'router jarkombra timika')
-ping('10.150.208.5', 'TOC timika')
+ping('google.com', 'Google')
+ping('192.168.5.235', 'Device 1')
+ping('192.168.5.236', 'Device 2')
+ping('192.168.5.237', 'Device 3')
+ping('192.168.5.238', 'Device 4')
 
+
+print ("IP\t\tDevice Name\tStatus")
 for r in results :
-    print(r+ "\n")
+    print(r)
