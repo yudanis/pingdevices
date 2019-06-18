@@ -1,5 +1,7 @@
 import os
+import bcolor
 
+color = bcolor.bcolors
 results = []
 
 def ping(hostname, device_label):
@@ -19,4 +21,9 @@ ping('192.168.5.238', 'Device 4')
 
 print ("IP\t\tDevice Name\tStatus")
 for r in results :
-    print(r)
+    if r[-1:] == 'P': 
+        print(color.OKGREEN + r + color.ENDC)
+    else:
+        print(color.FAIL + r + color.ENDC)
+        
+        
